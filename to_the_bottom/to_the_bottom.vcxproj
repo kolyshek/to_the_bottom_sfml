@@ -88,12 +88,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>F:\source_code\cpp_code\to_the_bottom\external\SFML_2.5.1_32_bit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\source_code\cpp_code\to_the_bottom\external\boost_1_76_0\include;F:\source_code\cpp_code\to_the_bottom\external\SFML_2_5_1_32_bit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>F:\source_code\cpp_code\to_the_bottom\external\SFML_2.5.1_32_bit\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>F:\source_code\cpp_code\to_the_bottom\external\boost_1_76_0\libs;F:\source_code\cpp_code\to_the_bottom\external\SFML_2_5_1_32_bit\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-audio-d.lib;sfml-graphics-d.lib;sfml-network-d.lib;sfml-system-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -105,14 +105,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>F:\source_code\cpp_code\to_the_bottom\external\SFML_2.5.1_32_bit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\source_code\cpp_code\to_the_bottom\external\boost_1_76_0\include;F:\source_code\cpp_code\to_the_bottom\external\SFML_2_5_1_32_bit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>F:\source_code\cpp_code\to_the_bottom\external\SFML_2.5.1_32_bit\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>F:\source_code\cpp_code\to_the_bottom\external\boost_1_76_0\libs;F:\source_code\cpp_code\to_the_bottom\external\SFML_2_5_1_32_bit\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-audio.lib;sfml-graphics.lib;sfml-network.lib;sfml-system.lib;sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -145,7 +145,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="InputField.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ObjectBase.cpp" />
+    <ClCompile Include="UIBase.cpp" />
+    <ClCompile Include="UIFactory.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Button.hpp" />
+    <ClInclude Include="InputField.hpp" />
+    <ClInclude Include="ObjectBase.hpp" />
+    <ClInclude Include="UIBase.hpp" />
+    <ClInclude Include="UIFactory.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
