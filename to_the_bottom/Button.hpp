@@ -23,7 +23,7 @@ namespace kp
 		sf::Text* getButtonText();
 
 		virtual void render() override;
-		virtual void update() override;
+		virtual void update(float dT) override;
 
 		~Button();
 	};

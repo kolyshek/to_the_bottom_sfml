@@ -149,6 +149,7 @@
     <ClCompile Include="InputField.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ObjectBase.cpp" />
+    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="UIBase.cpp" />
     <ClCompile Include="UIFactory.cpp" />
   </ItemGroup>
@@ -156,6 +157,7 @@
     <ClInclude Include="Button.hpp" />
     <ClInclude Include="InputField.hpp" />
     <ClInclude Include="ObjectBase.hpp" />
+    <ClInclude Include="Timer.hpp" />
     <ClInclude Include="UIBase.hpp" />
     <ClInclude Include="UIFactory.hpp" />
   </ItemGroup>

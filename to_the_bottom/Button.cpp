@@ -38,8 +38,9 @@ void kp::Button::render()
 {
 }
 
-void kp::Button::update()
+void kp::Button::update(float dT)
 {
+	m_dT = dT;
 }
 
 kp::Button::~Button()

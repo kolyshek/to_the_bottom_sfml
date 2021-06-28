@@ -2,6 +2,7 @@
 
 #include "InputField.hpp"
 #include "Button.hpp"
+#include "Timer.hpp"
 
 kp::InputField* kp::UIFactory::createInputField(sf::RenderWindow& window, sf::Event& event)
 {
@@ -15,6 +16,9 @@ kp::InputField* kp::UIFactory::createInputField(sf::RenderWindow& window, sf::Ev
 	inputField->setFont(*(new sf::Font));
 	inputField->setDefaultText(*(new sf::Text));
 	inputField->setPlayerText(*(new sf::Text));
+	inputField->setMaxLength(32);
+	inputField->setTimer(*(new kp::Timer));
+	inputField->setStateColors(*(new kp::StateColors));
 
 	return inputField;
 }

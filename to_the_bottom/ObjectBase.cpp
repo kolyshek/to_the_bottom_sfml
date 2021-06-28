@@ -2,7 +2,8 @@
 
 kp::ObjectBase::ObjectBase()
 	: m_window(nullptr),
-	m_event(nullptr)
+	m_event(nullptr),
+	m_dT(0.0f)
 {
 }
 

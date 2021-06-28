@@ -3,6 +3,8 @@
 #include "InputField.hpp"
 #include "Button.hpp"
 
+#include "Timer.hpp"
+
 #include "UIFactory.hpp"
 
 #include "SFML/Graphics.hpp"
@@ -21,6 +23,9 @@ int main()
         sf::Color fillColor(255, 255, 255, 255);
         unsigned int characterSize = 24;
 
+        inputField->getInputArea()->setSize(sf::Vector2f(60.0f, 30.0f));
+        inputField->getInputArea()->setOutlineThickness(2.0f);
+
         inputField->getPlayerText()->setFillColor(fillColor);
         inputField->getPlayerText()->setCharacterSize(characterSize);
         inputField->getPlayerText()->setFont(font);
@@ -29,6 +34,18 @@ int main()
         inputField->getDefaultText()->setCharacterSize(characterSize);
         inputField->getDefaultText()->setFont(font);
         inputField->getDefaultText()->setString("Enter your text here");
+
+        inputField->getTimer()->setTimeToStop(6.0f);
+
+        inputField->getStateColors()->selectedTrueInputArea = sf::Color(200, 200, 200, 255);
+        inputField->getStateColors()->selectedTrueOutline = sf::Color(120, 120, 120, 255);
+        inputField->getStateColors()->selectedTrueDefaultText = sf::Color(90, 90, 90, 255);
+        inputField->getStateColors()->selectedTruePlayerText = sf::Color(90, 90, 90, 255);
+
+        inputField->getStateColors()->selectedFalseInputArea = sf::Color(150, 150, 150, 200);
+        inputField->getStateColors()->selectedFalseOutline = sf::Color(70, 70, 70, 200);
+        inputField->getStateColors()->selectedFalseDefaultText = sf::Color(40, 40, 40, 200);
+        inputField->getStateColors()->selectedFalsePlayerText = sf::Color(40, 40, 40, 200);
     }
 
     while (window.isOpen())
@@ -43,7 +60,7 @@ int main()
         window.clear();
 
         inputField->render();
-        inputField->update();
+        inputField->update(0.01f);
 
         window.display();
     }

@@ -9,10 +9,24 @@
 
 namespace kp
 {
+	struct StateColors
+	{
+		sf::Color selectedTrueInputArea;
+		sf::Color selectedTrueOutline;
+		sf::Color selectedTrueDefaultText;
+		sf::Color selectedTruePlayerText;
+
+		sf::Color selectedFalseInputArea;
+		sf::Color selectedFalseOutline;
+		sf::Color selectedFalseDefaultText;
+		sf::Color selectedFalsePlayerText;
+	};
+
 	class InputField
 		: public kp::UIBase
 	{
 	private:
+		void changeUIStatus();
 		void changeFieldColors();
 
 		void insertText();
@@ -28,6 +42,8 @@ namespace kp
 		sf::Text* m_playerText;
 
 		sf::Uint16 m_maxLength;
+
+		kp::StateColors* m_stateColors;
 	public:
 		InputField();
 		InputField(const kp::InputField& copy);
@@ -38,6 +54,7 @@ namespace kp
 		void setDefaultText(sf::Text& defaultText);
 		void setPlayerText(sf::Text& playerText);
 		void setMaxLength(sf::Uint16 maxLength);
+		void setStateColors(kp::StateColors& stateColors);
 
 		sf::RectangleShape* getInputArea();
 		sf::String* getPlayerInput();
@@ -45,9 +62,10 @@ namespace kp
 		sf::Text* getDefaultText();
 		sf::Text* getPlayerText();
 		sf::Uint16 getMaxLength();
+		kp::StateColors* getStateColors();
 
 		virtual void render() override;
-		virtual void update() override;
+		virtual void update(float dT) override;
 
 		~InputField();
 	};

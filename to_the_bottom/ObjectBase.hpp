@@ -10,6 +10,8 @@ namespace kp
 	protected:
 		sf::RenderWindow* m_window;
 		sf::Event* m_event;
+
+		float m_dT;
 	public:
 		ObjectBase();
 
@@ -20,7 +22,7 @@ namespace kp
 		sf::Event* getEvent();
 
 		virtual void render() = 0;
-		virtual void update() = 0;
+		virtual void update(float dT) = 0;
 
 		~ObjectBase();
 	};
