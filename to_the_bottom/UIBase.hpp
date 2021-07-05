@@ -18,13 +18,13 @@ namespace kp
 	public:
 		UIBase();
 
-		void setTimer(kp::Timer& timer);
 		void setSelected(bool selected);
 		void setUnicodeMaxCode(unsigned int unicodeMaxCode);
+		void setTimer(kp::Timer& timer);
 
-		kp::Timer* getTimer();
 		bool getSelected();
 		unsigned int getUnicodeMaxCode();
+		kp::Timer* getTimer();
 
 		~UIBase();
 	};

@@ -7,11 +7,6 @@ kp::UIBase::UIBase()
 {
 }
 
-void kp::UIBase::setTimer(kp::Timer& timer)
-{
-	m_timer = &timer;
-}
-
 void kp::UIBase::setSelected(bool selected)
 {
 	m_selected = selected;
@@ -22,9 +17,9 @@ void kp::UIBase::setUnicodeMaxCode(unsigned int unicodeMaxCode)
 	m_unicodeMaxCode = unicodeMaxCode;
 }
 
-kp::Timer* kp::UIBase::getTimer()
+void kp::UIBase::setTimer(kp::Timer& timer)
 {
-	return m_timer;
+	m_timer = &timer;
 }
 
 bool kp::UIBase::getSelected()
@@ -35,6 +30,11 @@ bool kp::UIBase::getSelected()
 unsigned int kp::UIBase::getUnicodeMaxCode()
 {
 	return m_unicodeMaxCode;
+}
+
+kp::Timer* kp::UIBase::getTimer()
+{
+	return m_timer;
 }
 
 kp::UIBase::~UIBase()

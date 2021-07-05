@@ -11,6 +11,7 @@ namespace kp
 
 	enum class UIType
 	{
+		UNKNOWN = -1,
 		INPUT_FIELD,
 		BUTTON,
 		MAX_TYPE

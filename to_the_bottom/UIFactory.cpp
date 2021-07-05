@@ -19,6 +19,7 @@ kp::InputField* kp::UIFactory::createInputField(sf::RenderWindow& window, sf::Ev
 	inputField->setMaxLength(32);
 	inputField->setTimer(*(new kp::Timer));
 	inputField->setStateColors(*(new kp::StateColors));
+	inputField->setEdgeIndent(*(new sf::Vector2f));
 
 	return inputField;
 }
@@ -36,14 +37,14 @@ kp::Button* kp::UIFactory::createButton(sf::RenderWindow& window, sf::Event& eve
 	return button;
 }
 
-kp::UIBase* kp::UIFactory::createUIElement(UIType type, sf::RenderWindow& window, sf::Event& event)
+kp::UIBase* kp::UIFactory::createUIElement(kp::UIType type, sf::RenderWindow& window, sf::Event& event)
 {
 	switch (type)
 	{
-	case UIType::INPUT_FIELD:
+	case kp::UIType::INPUT_FIELD:
 		return createInputField(window, event);
 
-	case UIType::BUTTON:
+	case kp::UIType::BUTTON:
 		return createButton(window, event);
 
 	default:

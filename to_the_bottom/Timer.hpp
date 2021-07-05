@@ -3,25 +3,41 @@
 
 namespace kp
 {
+	enum class TimeDirection
+	{
+		UNKNOWN = -1,
+		INCREASE,
+		DECREASE,
+		MAX_DIRECTION
+	};
+
 	class Timer
 	{
 	protected:
-		float m_timeToStop;
-		float m_timeBuffer;
+		float m_begin;
+		float m_end;
+		float m_beginBuffer;
+		float m_endBuffer;
 
 		bool m_run;
+
+		TimeDirection m_direction;
 	public:
 		Timer();
 
-		void setTimeToStop(float timeToStop);
-		void setTimerStatus(bool timerStatus);
+		void setBegin(float begin);
+		void setEnd(float end);
+		void setTimerRun(bool timerRun);
+		void setDirection(kp::TimeDirection direction);
 
-		float getTimeToStop();
-		bool getTimerStatus();
+		float getBegin();
+		float getEnd();
+		bool getTimerRun();
+		kp::TimeDirection getDirection();
 
-		bool timeIsOver();
+		bool isOver();
 
-		void update(float m_dT);
+		void update(float dT);
 
 		~Timer();
 	};

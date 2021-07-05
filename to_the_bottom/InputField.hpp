@@ -26,7 +26,10 @@ namespace kp
 		: public kp::UIBase
 	{
 	private:
+		void changeTextPositionToInputArea();
 		void changeUIStatus();
+		void changeMarkerValue();
+		void changeMarkerPosition();
 		void changeFieldColors();
 
 		void insertText();
@@ -44,6 +47,11 @@ namespace kp
 		sf::Uint16 m_maxLength;
 
 		kp::StateColors* m_stateColors;
+
+		sf::Vector2f* m_edgeIndent;
+
+		std::size_t m_markerPosition;
+		std::size_t m_markerPositionBuffer;
 	public:
 		InputField();
 		InputField(const kp::InputField& copy);
@@ -55,6 +63,8 @@ namespace kp
 		void setPlayerText(sf::Text& playerText);
 		void setMaxLength(sf::Uint16 maxLength);
 		void setStateColors(kp::StateColors& stateColors);
+		void setEdgeIndent(sf::Vector2f& edgeIndent);
+		void setMarkerPosition(std::size_t markerPosition);
 
 		sf::RectangleShape* getInputArea();
 		sf::String* getPlayerInput();
@@ -63,6 +73,8 @@ namespace kp
 		sf::Text* getPlayerText();
 		sf::Uint16 getMaxLength();
 		kp::StateColors* getStateColors();
+		sf::Vector2f* getEdgeIndent();
+		std::size_t getMarkerPosition();
 
 		virtual void render() override;
 		virtual void update(float dT) override;
