@@ -1,5 +1,13 @@
 #include "Programm.hpp"
 
+void kp::Programm::memoryAllocation()
+{
+	m_window = new sf::RenderWindow;
+	m_event = new sf::Event;
+	m_clock = new sf::Clock;
+	m_timer = kp::GeneralFactory::createTimer();
+}
+
 void kp::Programm::initOfBaseTypes()
 {
 	m_dT = 0.0f;
@@ -7,24 +15,11 @@ void kp::Programm::initOfBaseTypes()
 
 void kp::Programm::initWindow()
 {
-	m_window = new sf::RenderWindow;
 	m_window->create(sf::VideoMode(400, 500), "ToTheBottom", sf::Style::Close);
-}
-
-void kp::Programm::initEvent()
-{
-	m_event = new sf::Event;
-}
-
-void kp::Programm::initClock()
-{
-	m_clock = new sf::Clock;
 }
 
 void kp::Programm::initTimer()
 {
-	m_timer = kp::GeneralFactory::createTimer();
-
 	m_timer->setLimit(0.0f);
 	m_timer->setLimitation(kp::Limitation::Unlimited);
 	m_timer->setActive(true);
@@ -48,10 +43,9 @@ void kp::Programm::updateEvent()
 
 kp::Programm::Programm()
 {
+	memoryAllocation();
 	initOfBaseTypes();
 	initWindow();
-	initEvent();
-	initClock();
 	initTimer();
 }
 

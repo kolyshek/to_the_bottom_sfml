@@ -11,10 +11,10 @@ namespace kp
 			public kp::IEvent
 	{
 	private:
+		void memoryAllocation();
 		void initOfBaseTypes();
 		void initRect();
 		void initFont();
-		void initText();
 	protected:
 		sf::RectangleShape* m_inputRect;
 		unsigned int m_size;

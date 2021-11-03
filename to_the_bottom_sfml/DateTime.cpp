@@ -1,5 +1,10 @@
 #include "DateTime.hpp"
 
+void kp::DateTime::memoryAllocation()
+{
+	m_data = new kp::DTData;
+}
+
 void kp::DateTime::initData()
 {
 	m_data->second = 0;
@@ -12,6 +17,7 @@ void kp::DateTime::initData()
 
 kp::DateTime::DateTime()
 {
+	memoryAllocation();
 	initData();
 }
 

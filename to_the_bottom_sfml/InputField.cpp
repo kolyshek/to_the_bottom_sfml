@@ -1,6 +1,13 @@
 #include "InputField.hpp"
 #include "Timer.hpp"
 
+void kp::InputField::memoryAllocation()
+{
+	m_inputRect = new sf::RectangleShape;
+	m_font = new sf::Font;
+	m_text = new sf::String;
+}
+
 void kp::InputField::initOfBaseTypes()
 {
 	m_size = 32;
@@ -8,7 +15,6 @@ void kp::InputField::initOfBaseTypes()
 
 void kp::InputField::initRect()
 {
-	m_inputRect = new sf::RectangleShape;
 	m_inputRect->setSize(sf::Vector2f(15 * m_size, 20));
 	m_inputRect->setFillColor(sf::Color::White);
 	m_inputRect->setOutlineThickness(2);
@@ -21,17 +27,12 @@ void kp::InputField::initFont()
 	m_font->loadFromFile(".../fonts/pixel_letters_full.ttf");
 }
 
-void kp::InputField::initText()
-{
-	m_text = new sf::String;
-}
-
 kp::InputField::InputField()
 {
+	memoryAllocation();
 	initOfBaseTypes();
 	initRect();
 	initFont();
-	initText();
 }
 
 kp::InputField::InputField(const InputField& copy)

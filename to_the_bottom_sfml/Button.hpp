@@ -9,6 +9,7 @@ namespace kp
 		: public kp::ObjectBase
 	{
 	private:
+		void memoryAllocation();
 		void initRect();
 	protected:
 		sf::RectangleShape* m_btnRect;

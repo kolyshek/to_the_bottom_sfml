@@ -1,8 +1,12 @@
 #include "Button.hpp"
 
-void kp::Button::initRect()
+void kp::Button::memoryAllocation()
 {
 	m_btnRect = new sf::RectangleShape;
+}
+
+void kp::Button::initRect()
+{
 	m_btnRect->setSize(sf::Vector2f(60, 20));
 	m_btnRect->setFillColor(sf::Color(117, 117, 117));
 	m_btnRect->setOutlineThickness(2);
@@ -12,6 +16,7 @@ void kp::Button::initRect()
 
 kp::Button::Button()
 {
+	memoryAllocation();
 	initRect();
 }
 

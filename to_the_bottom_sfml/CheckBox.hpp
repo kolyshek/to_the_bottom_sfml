@@ -11,6 +11,7 @@ namespace kp
 			public kp::IActive
 	{
 	private:
+		void memoryAllocation();
 		void initRect();
 	protected:
 		sf::RectangleShape* m_checkRect;

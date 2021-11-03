@@ -18,6 +18,7 @@ namespace kp
 	class DateTime
 	{
 	private:
+		void memoryAllocation();
 		void initData();
 	protected:
 		DTData* m_data;

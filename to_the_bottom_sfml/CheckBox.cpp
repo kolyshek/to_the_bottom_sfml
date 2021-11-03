@@ -1,8 +1,12 @@
 #include "CheckBox.hpp"
 
-void kp::CheckBox::initRect()
+void kp::CheckBox::memoryAllocation()
 {
 	m_checkRect = new sf::RectangleShape;
+}
+
+void kp::CheckBox::initRect()
+{
 	m_checkRect->setSize(sf::Vector2f(20, 20));
 	m_checkRect->setFillColor(sf::Color(70, 70, 70));
 	m_checkRect->setOutlineThickness(2);
@@ -12,6 +16,7 @@ void kp::CheckBox::initRect()
 
 kp::CheckBox::CheckBox()
 {
+	memoryAllocation();
 	initRect();
 }
 

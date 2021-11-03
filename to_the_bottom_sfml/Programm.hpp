@@ -9,10 +9,9 @@ namespace kp
 		: public kp::IBase
 	{
 	private:
+		void memoryAllocation();
 		void initOfBaseTypes();
 		void initWindow();
-		void initEvent();
-		void initClock();
 		void initTimer();
 	protected:
 		sf::RenderWindow* m_window;
