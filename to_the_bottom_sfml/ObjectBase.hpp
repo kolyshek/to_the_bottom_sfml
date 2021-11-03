@@ -1,28 +1,23 @@
 #ifndef OBJECT_BASE_HPP
 #define OBJECT_BASE_HPP
 
-#include "SFML/Graphics.hpp"
+#include "coreMinimal.hpp"
 
 namespace kp
 {
 	class ObjectBase
+		: public kp::IBase, public kp::IActive
 	{
-	protected:
-		sf::RenderWindow* m_window;
-		sf::Event* m_event;
-
-		float m_dT;
+	private:
+		void initOfBaseTypes();
 	public:
 		ObjectBase();
 
-		void setWindow(sf::RenderWindow& window);
-		void setEvent(sf::Event& event);
+		virtual void setActive(bool active) override;
+		virtual bool isActive() override;
 
-		sf::RenderWindow* getWindow();
-		sf::Event* getEvent();
-
-		virtual void render() = 0;
-		virtual void update(float dT) = 0;
+		virtual void render() override;
+		virtual void update(float dT) override;
 
 		~ObjectBase();
 	};

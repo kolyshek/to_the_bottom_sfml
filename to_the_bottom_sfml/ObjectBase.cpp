@@ -1,34 +1,39 @@
 #include "ObjectBase.hpp"
+#include "Timer.hpp"
+
+void kp::ObjectBase::initOfBaseTypes()
+{
+	m_active = false;
+	m_dT = 0.0f;
+}
 
 kp::ObjectBase::ObjectBase()
-	: m_window(nullptr),
-	m_event(nullptr),
-	m_dT(0.0f)
+{
+	initOfBaseTypes();
+}
+
+void kp::ObjectBase::setActive(bool active)
+{
+	m_active = active;
+}
+
+bool kp::ObjectBase::isActive()
+{
+	return m_active;
+}
+
+void kp::ObjectBase::render()
 {
 }
 
-void kp::ObjectBase::setWindow(sf::RenderWindow& window)
+void kp::ObjectBase::update(float dT)
 {
-	m_window = &window;
-}
-
-void kp::ObjectBase::setEvent(sf::Event& event)
-{
-	m_event = &event;
-}
-
-sf::RenderWindow* kp::ObjectBase::getWindow()
-{
-	return m_window;
-}
-
-sf::Event* kp::ObjectBase::getEvent()
-{
-	return m_event;
+	if (m_active)
+	{
+		m_dT = dT;
+	}
 }
 
 kp::ObjectBase::~ObjectBase()
 {
-	m_window = nullptr;
-	m_event = nullptr;
 }

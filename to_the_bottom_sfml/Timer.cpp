@@ -1,94 +1,95 @@
 #include "Timer.hpp"
 
+void kp::Timer::initOfBaseTypes()
+{
+	m_begin = 0.0f;
+	m_end = 4.0f;
+	m_limitation = kp::Limitation::Limited;
+}
+
 kp::Timer::Timer()
-	: m_begin(0.0f), m_end(0.0f),
-	m_beginBuffer(0.0f), m_endBuffer(0.0f),
-	m_run(false),
-	m_direction(kp::TimeDirection::UNKNOWN)
 {
+	initOfBaseTypes();
 }
 
-void kp::Timer::setBegin(float begin)
+kp::Timer::Timer(const kp::Timer& copy)
 {
-	m_begin = begin;
-	m_beginBuffer = m_begin;
+	m_begin = copy.m_begin;
+	m_end = copy.m_end;
+	m_limitation = copy.m_limitation;
 }
 
-void kp::Timer::setEnd(float end)
+void kp::Timer::setActive(bool active)
 {
-	m_end = end;
-	m_endBuffer = m_end;
+	m_active = active;
 }
 
-void kp::Timer::setTimerRun(bool timerRun)
+bool kp::Timer::isActive()
 {
-	m_run = timerRun;
+	return m_active;
 }
 
-void kp::Timer::setDirection(kp::TimeDirection direction)
+void kp::Timer::setLimitation(const kp::Limitation limitation)
 {
-	m_direction = direction;
+	m_limitation = limitation;
 }
 
-float kp::Timer::getBegin()
+const kp::Limitation kp::Timer::getLimitation() const
 {
-	return m_beginBuffer;
+	return m_limitation;
 }
 
-float kp::Timer::getEnd()
+void kp::Timer::setLimit(float seconds)
 {
-	return m_endBuffer;
+	m_end = seconds;
 }
 
-bool kp::Timer::getTimerRun()
+const float kp::Timer::getLimit() const
 {
-	return m_run;
+	return m_end;
 }
 
-kp::TimeDirection kp::Timer::getDirection()
+const bool kp::Timer::isOver() const
 {
-	return m_direction;
-}
-
-bool kp::Timer::isOver()
-{
-	if (m_direction == kp::TimeDirection::INCREASE)
+	if (m_active)
 	{
-		if (m_begin >= m_end)
+		if (m_begin >= m_end
+			&& m_limitation == kp::Limitation::Limited)
 		{
-			m_begin = m_beginBuffer;
-
 			return true;
 		}
 	}
-	else if (m_direction == kp::TimeDirection::DECREASE)
-	{
-		if (m_begin <= m_end)
-		{
-			m_begin = m_beginBuffer;
 
-			return true;
-		}
-	}
-	
 	return false;
+}
+
+void kp::Timer::reset()
+{
+	m_begin = 0.0f;
+	m_active = false;
+	m_limitation = kp::Limitation::Limited;
+}
+
+void kp::Timer::render()
+{
 }
 
 void kp::Timer::update(float dT)
 {
-	if (m_run)
+	m_dT = dT;
+
+	if (m_active)
 	{
-		if (m_direction == kp::TimeDirection::INCREASE)
+		if (m_limitation == kp::Limitation::Unknown)
 		{
-			m_begin += dT;
+			reset();
+			return;
 		}
-		else if (m_direction == kp::TimeDirection::DECREASE)
+
+		if (m_begin <= m_end
+			|| m_limitation == kp::Limitation::Unlimited)
 		{
-			m_begin -= dT;
+			m_begin += m_dT;
 		}
 	}
-}
-
-kp::Timer::~Timer()
-{
 }

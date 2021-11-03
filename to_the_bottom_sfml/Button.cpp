@@ -1,37 +1,24 @@
 #include "Button.hpp"
 
-kp::Button::Button()
-	: m_buttonArea(nullptr),
-	m_buttonText(nullptr)
+void kp::Button::initRect()
 {
+	m_btnRect = new sf::RectangleShape;
+	m_btnRect->setSize(sf::Vector2f(60, 20));
+	m_btnRect->setFillColor(sf::Color(117, 117, 117));
+	m_btnRect->setOutlineThickness(2);
+	m_btnRect->setOutlineColor(sf::Color(127, 127, 127));
+	m_btnRect->setPosition(sf::Vector2f(0.0f, 0.0f));
+}
+
+kp::Button::Button()
+{
+	initRect();
 }
 
 kp::Button::Button(Button& copy)
 {
-	m_selected = copy.m_selected;
-
-	*m_buttonArea = *copy.m_buttonArea;
-	*m_buttonText = *copy.m_buttonText;
-}
-
-void kp::Button::setButtonArea(sf::RectangleShape& buttonArea)
-{
-	m_buttonArea = &buttonArea;
-}
-
-void kp::Button::setButtonText(sf::Text& buttonText)
-{
-	m_buttonText = &buttonText;
-}
-
-sf::RectangleShape* kp::Button::getButtonArea()
-{
-	return m_buttonArea;
-}
-
-sf::Text* kp::Button::getButtonText()
-{
-	return m_buttonText;
+	*m_btnRect = *copy.m_btnRect;
+	m_active = copy.m_active;
 }
 
 void kp::Button::render()
@@ -40,14 +27,13 @@ void kp::Button::render()
 
 void kp::Button::update(float dT)
 {
-	m_dT = dT;
+	if (m_active)
+	{
+		m_dT = dT;
+	}
 }
 
 kp::Button::~Button()
 {
-	delete m_buttonArea;
-	delete m_buttonText;
-
-	m_buttonArea = nullptr;
-	m_buttonText = nullptr;
+	delete m_btnRect;
 }

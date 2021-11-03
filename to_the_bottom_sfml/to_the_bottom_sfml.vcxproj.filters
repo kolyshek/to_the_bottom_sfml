@@ -9,64 +9,108 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Header Files\core">
+      <UniqueIdentifier>{bf1ec3cb-8e1c-496d-b6b3-2b65f2911ebc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Factory">
-      <UniqueIdentifier>{a4120fc7-0948-44be-a658-22d75b2a88bd}</UniqueIdentifier>
+    <Filter Include="Header Files\widget">
+      <UniqueIdentifier>{85f6e797-b2e4-429a-bc68-993cc0006a0f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Factory">
-      <UniqueIdentifier>{c1982cf4-69e6-4619-bb70-50a0131a22d8}</UniqueIdentifier>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{5ab0be94-f963-443b-8126-07b930d158dd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\UI">
-      <UniqueIdentifier>{e262c450-524f-4f80-aac8-fd78f680392b}</UniqueIdentifier>
+    <Filter Include="Source Files\widget">
+      <UniqueIdentifier>{9fb85dfd-eb58-4ad5-b09e-c3fb4c6a216d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\UI">
-      <UniqueIdentifier>{894e2fd2-bb84-4bf3-aa50-d82b1826cf8b}</UniqueIdentifier>
+    <Filter Include="Header Files\core\factory">
+      <UniqueIdentifier>{20baff0b-1dcf-4e00-8aa8-03af00bd5cd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\factory">
+      <UniqueIdentifier>{77f2601b-67f6-4df8-a70f-adcb741cd04d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\general">
+      <UniqueIdentifier>{b25d9138-d666-4744-83d9-8d9dfc25c161}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\general">
+      <UniqueIdentifier>{a334104c-a9a1-4700-ba42-0a7cac5aeb94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\interface">
+      <UniqueIdentifier>{3b30d446-a760-4735-ba55-70ee220ab667}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ObjectBase.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Timer.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UIFactory.hpp">
-      <Filter>Header Files\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Button.hpp">
-      <Filter>Header Files\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="InputField.hpp">
-      <Filter>Header Files\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="UIBase.hpp">
-      <Filter>Header Files\UI</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files\widget</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ObjectBase.cpp">
+    <ClCompile Include="Programm.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="UIFactory.cpp">
-      <Filter>Source Files\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="UIBase.cpp">
-      <Filter>Source Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="InputField.cpp">
-      <Filter>Source Files\UI</Filter>
+      <Filter>Source Files\widget</Filter>
     </ClCompile>
-    <ClCompile Include="Button.cpp">
-      <Filter>Source Files\UI</Filter>
+    <ClCompile Include="ObjectBase.cpp">
+      <Filter>Source Files\core\general</Filter>
     </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source Files\core\general</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneralFactory.cpp">
+      <Filter>Source Files\core\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="WidgetFactory.cpp">
+      <Filter>Source Files\core\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckBox.cpp">
+      <Filter>Source Files\widget</Filter>
+    </ClCompile>
+    <ClCompile Include="DateTime.cpp">
+      <Filter>Source Files\core\general</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="coreMinimal.hpp">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="IActive.hpp">
+      <Filter>Header Files\core\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="IBase.hpp">
+      <Filter>Header Files\core\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Programm.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputField.hpp">
+      <Filter>Header Files\widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.hpp">
+      <Filter>Header Files\widget</Filter>
+    </ClInclude>
+    <ClInclude Include="IWindow.hpp">
+      <Filter>Header Files\core\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.hpp">
+      <Filter>Header Files\core\general</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectBase.hpp">
+      <Filter>Header Files\core\general</Filter>
+    </ClInclude>
+    <ClInclude Include="WidgetFactory.hpp">
+      <Filter>Header Files\core\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneralFactory.hpp">
+      <Filter>Header Files\core\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="IEvent.hpp">
+      <Filter>Header Files\core\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckBox.hpp">
+      <Filter>Header Files\widget</Filter>
+    </ClInclude>
+    <ClInclude Include="DateTime.hpp">
+      <Filter>Header Files\core\general</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

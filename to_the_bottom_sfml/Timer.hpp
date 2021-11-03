@@ -1,45 +1,45 @@
 #ifndef TIMER_HPP
 #define TIMER_HPP
 
+#include "coreMinimal.hpp"
+
 namespace kp
 {
-	enum class TimeDirection
+	enum class Limitation
 	{
-		UNKNOWN = -1,
-		INCREASE,
-		DECREASE,
-		MAX_DIRECTION
+		Unknown,
+		Limited,
+		Unlimited
 	};
 
 	class Timer
+		: public kp::IBase, public kp::IActive
 	{
+	private:
+		void initOfBaseTypes();
 	protected:
 		float m_begin;
 		float m_end;
-		float m_beginBuffer;
-		float m_endBuffer;
 
-		bool m_run;
-
-		TimeDirection m_direction;
+		kp::Limitation m_limitation;
 	public:
 		Timer();
+		Timer(const kp::Timer& copy);
 
-		void setBegin(float begin);
-		void setEnd(float end);
-		void setTimerRun(bool timerRun);
-		void setDirection(kp::TimeDirection direction);
+		virtual void setActive(bool active) override;
+		virtual bool isActive() override;
 
-		float getBegin();
-		float getEnd();
-		bool getTimerRun();
-		kp::TimeDirection getDirection();
+		void setLimitation(const kp::Limitation limitation);
+		const kp::Limitation getLimitation() const;
 
-		bool isOver();
+		void setLimit(float seconds);
+		const float getLimit() const;
 
-		void update(float dT);
+		const bool isOver() const;
+		void reset();
 
-		~Timer();
+		virtual void render() override;
+		virtual void update(float dT) override;
 	};
 }
 
