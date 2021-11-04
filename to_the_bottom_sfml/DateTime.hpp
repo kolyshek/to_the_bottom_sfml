@@ -7,12 +7,12 @@ namespace kp
 {
 	struct DTData
 	{
-		uint16_t second;
-		uint16_t minute;
-		uint16_t hour;
-		uint16_t day;
-		uint16_t month;
-		uint16_t year;
+		int16_t second = 0;
+		int16_t minute = 0;
+		int16_t hour = 0;
+		int16_t day = 0;
+		int16_t month = 0;
+		int16_t year = 0;
 	};
 
 	class DateTime
@@ -24,12 +24,17 @@ namespace kp
 		DTData* m_data;
 	public:
 		DateTime();
+		DateTime(const kp::DateTime& copy);
 
 		void setData(kp::DTData* dtdata);
-		kp::DTData* getData();
+		const kp::DTData* getData() const;
 
-		void addToData(kp::DTData* dtdata);
-		void subtractFromData(kp::DTData* dtdata);
+		void addDates(kp::DTData* dtdata, uint16_t dayInMonth = 29);
+		void subtractDates(kp::DTData* dtdata, uint16_t dayInMonth = 29);
+
+		static kp::DTData* generateData();
+
+		friend std::ostream& operator<<(std::ostream& out, const DateTime& dateTime);
 
 		~DateTime();
 	};

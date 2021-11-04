@@ -9,7 +9,7 @@ namespace kp
 		bool m_active;
 	public:
 		virtual void setActive(bool active) = 0;
-		virtual bool isActive() = 0;
+		virtual bool isActive() const = 0;
 	};
 }
 

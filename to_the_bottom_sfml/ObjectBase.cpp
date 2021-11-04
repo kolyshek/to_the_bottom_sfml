@@ -17,7 +17,7 @@ void kp::ObjectBase::setActive(bool active)
 	m_active = active;
 }
 
-bool kp::ObjectBase::isActive()
+bool kp::ObjectBase::isActive() const
 {
 	return m_active;
 }

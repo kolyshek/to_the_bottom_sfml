@@ -14,7 +14,7 @@ namespace kp
 		ObjectBase();
 
 		virtual void setActive(bool active) override;
-		virtual bool isActive() override;
+		virtual bool isActive() const override;
 
 		virtual void render() override;
 		virtual void update(float dT) override;

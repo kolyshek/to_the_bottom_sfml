@@ -10,8 +10,10 @@ kp::InputField* kp::WidgetFactory::createInputField(sf::RenderWindow* window, sf
 
 	inputField->setWindow(window);
 	inputField->setEvent(event);
-	inputField->setPosition(sf::Vector2f(window->getSize().x / 2.0f, window->getSize().y / 2.0f));
-	inputField->setText(sf::String("Enter your text here"));
+	inputField->setPosition(sf::Vector2f(16.0f,
+		static_cast<float>(window->getSize().y) / 2.0f));
+	sf::String str("Enter here");
+	inputField->setText(str);
 
 	return inputField;
 }

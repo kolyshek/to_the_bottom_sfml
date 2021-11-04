@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <random>
+#include <ctime>
 
 #include "SFML/Audio.hpp"
 #include "SFML/Graphics.hpp"
@@ -21,5 +23,8 @@
 
 #include "ObjectBase.hpp"
 #include "Timer.hpp"
+#include "DateTime.hpp"
+#include "Palette.hpp"
+#include "StateBase.hpp"
 
 #endif // !CORE_MINIMAL_HPP

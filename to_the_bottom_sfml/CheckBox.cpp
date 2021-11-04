@@ -31,15 +31,6 @@ bool kp::CheckBox::contains(sf::Vector2f point) const
 	return m_checkRect->getGlobalBounds().contains(point);
 }
 
-void kp::CheckBox::setActive(bool active)
-{
-}
-
-bool kp::CheckBox::isActive()
-{
-	return false;
-}
-
 void kp::CheckBox::render()
 {
 }

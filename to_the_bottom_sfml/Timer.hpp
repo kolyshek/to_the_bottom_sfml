@@ -7,13 +7,14 @@ namespace kp
 {
 	enum class Limitation
 	{
-		Unknown,
-		Limited,
-		Unlimited
+		Unknown = -1,
+		Limited = 0,
+		Unlimited = 1
 	};
 
 	class Timer
-		: public kp::IBase, public kp::IActive
+		: public kp::IBase,
+			public kp::IActive
 	{
 	private:
 		void initOfBaseTypes();
@@ -27,15 +28,17 @@ namespace kp
 		Timer(const kp::Timer& copy);
 
 		virtual void setActive(bool active) override;
-		virtual bool isActive() override;
+		virtual bool isActive() const override;
 
 		void setLimitation(const kp::Limitation limitation);
-		const kp::Limitation getLimitation() const;
+		kp::Limitation getLimitation() const;
 
 		void setLimit(float seconds);
-		const float getLimit() const;
+		float getLimit() const;
 
-		const bool isOver() const;
+		float getCurrentTime() const;
+
+		bool isOver();
 		void reset();
 
 		virtual void render() override;

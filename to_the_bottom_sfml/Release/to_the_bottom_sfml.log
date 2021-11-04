@@ -1,0 +1,25 @@
+﻿  Button.cpp
+  CheckBox.cpp
+  DateTime.cpp
+f:\source_code\cpp_code\to_the_bottom_sfml\to_the_bottom_sfml\datetime.cpp(34): warning C4100: 'dtdata': unreferenced formal parameter
+f:\source_code\cpp_code\to_the_bottom_sfml\to_the_bottom_sfml\datetime.cpp(38): warning C4100: 'dtdata': unreferenced formal parameter
+  GeneralFactory.cpp
+  InputField.cpp
+f:\source_code\cpp_code\to_the_bottom_sfml\to_the_bottom_sfml\inputfield.cpp(18): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  main.cpp
+  ObjectBase.cpp
+  Programm.cpp
+  Timer.cpp
+  WidgetFactory.cpp
+f:\source_code\cpp_code\to_the_bottom_sfml\to_the_bottom_sfml\widgetfactory.cpp(20): warning C4100: 'event': unreferenced formal parameter
+f:\source_code\cpp_code\to_the_bottom_sfml\to_the_bottom_sfml\widgetfactory.cpp(20): warning C4100: 'window': unreferenced formal parameter
+f:\source_code\cpp_code\to_the_bottom_sfml\to_the_bottom_sfml\widgetfactory.cpp(27): warning C4100: 'event': unreferenced formal parameter
+f:\source_code\cpp_code\to_the_bottom_sfml\to_the_bottom_sfml\widgetfactory.cpp(27): warning C4100: 'window': unreferenced formal parameter
+  Generating code
+  All 113 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  to_the_bottom_sfml.vcxproj -> F:\source_code\cpp_code\to_the_bottom_sfml\Release\to_the_bottom_sfml.exe

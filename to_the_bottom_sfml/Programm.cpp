@@ -1,5 +1,7 @@
 #include "Programm.hpp"
 
+#include "InputField.hpp"
+
 void kp::Programm::memoryAllocation()
 {
 	m_window = new sf::RenderWindow;
@@ -20,7 +22,6 @@ void kp::Programm::initWindow()
 
 void kp::Programm::initTimer()
 {
-	m_timer->setLimit(0.0f);
 	m_timer->setLimitation(kp::Limitation::Unlimited);
 	m_timer->setActive(true);
 }
